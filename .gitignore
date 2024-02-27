@@ -1,0 +1,43 @@
+# Python specific
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# Dependency directories
+node_modules/
+.venv/
+.pipenv/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.obj
+*.so
+
+# IDE/Editor specific
+.idea/
+.vscode/
+*.swp
+*~
+
+# Package files
+*.lock
+pip-log.txt
+pip-delete-this-directory.txt
+
+# System files
+.DS_Store
+Thumbs.db
+``
