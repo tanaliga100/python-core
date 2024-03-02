@@ -3,10 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jordan's Website</title>
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100dvw;
+      }
+      nav {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 20dvh;
+      }
+      section {
+        height: 70dvh;
+        background: "grey";
+      }
+      main {
+        padding: 1rem;
+      }
+      footer {
+        height: 10dvh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>Base Template</h1>
-    <p>{{name}}</p>
+    <nav class="nav">Logo</nav>
+    <section>
+      <main>{% block content %} {% endblock %}</main>
+    </section>
+    <footer>This is a footer</footer>
   </body>
 </html>
+
