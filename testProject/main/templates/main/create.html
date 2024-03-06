@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title%} Create Todo {% endblock%}
+{% block content %}
+<h1> Create new TODO</h1>
+  <form action="/create/" method="POST">
+        {% csrf_token %}
+        {{forms.as_p}}
+        {% comment %} <label for="todoText">Todo Text:</label><br>
+        <input type="text" id="todoText" name="todoText"><br><br>
+        <input type="checkbox" id="isComplete" name="isComplete">
+        <label for="isComplete">Complete</label><br><br>
+        <input type="submit" value="Create Todo"> {% endcomment %}
+        <button type="submit" name="save"> Create Todo </button>
+  </form>
+{% endblock%}
+
