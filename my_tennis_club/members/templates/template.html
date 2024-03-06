@@ -1,14 +1,36 @@
 {% extends "master.html" %}
 
 {% block title%} Testing {% endblock%}
-
 {% block content %}
+  {% for x  in fruits %}
+  <h1> {{x}} </h1>
+  {% endfor%}
+  <p>In views.py you can see what the fruits variable looks like.</p>
+  {% with name="dan100"%}
+<h1>Hello {{ name }}, how are you?</h1>
+{% endwith %}
 
-{% for x  in fruits %}
-<h1> {{x}} </h1>
-{% endfor%}
-<p>In views.py you can see what the fruits variable looks like.</p>
+{% for l in lists  %}
+  <li>  {{l.firstname}}</li>
+{% endfor %}
 
 
+{% if greeting == 1 %}
+<h1> hello</h1>
+  {% else %}
+  <h1> bye </h1>
+  {% endif %}
+
+{% include "footer.html" %}
+
+
+
+{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+
+
+
+
+
+  
 {% endblock%}
-

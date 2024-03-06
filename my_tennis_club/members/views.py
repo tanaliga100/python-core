@@ -14,8 +14,11 @@ from .models import Member
 
 def testing(request):
   template = loader.get_template("template.html")
+  mymembers = Member.objects.all().values()
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry']
+    'fruits': ['Apple', 'Banana', 'Cherry'],
+    'name': "jordantanaliga100",
+    'lists': mymembers
   }
   return HttpResponse(template.render(context, request))
 

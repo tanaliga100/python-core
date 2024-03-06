@@ -6,6 +6,11 @@
 {% block content %}
   <h2>{{ mymember.firstname }} {{ mymember.lastname }}</h2>
   
+  {% comment %} <h1>
+  {% with name = {mymember.firstname}%}
+  Hello, {{name}}
+  {% {% endwith %}%}  
+  </h1> {% endcomment %}
   <p>Phone {{ mymember.phone }}</p>
   <p>Member since: {{ mymember.joined_date }}</p>
   
