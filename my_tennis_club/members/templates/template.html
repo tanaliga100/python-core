@@ -1,13 +1,18 @@
 {% extends "master.html" %}
+{% load static %}
+<html>
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
 
-{% block title%} Testing {% endblock%}
-{% block content %}
+<body>
+  
+  {% block title%} Testing {% endblock%}
+  {% block content %}
 <h1>For Loop </h1>
   {% for x  in fruits %}
   <p> {{x}} </p>
   {% endfor%}
   <p>In views.py you can see what the fruits variable looks like.</p>
-
+  
 <h1>Variables </h1>
 {% with name="dan100"%}
 <p>Hello {{ name }}, how are you?</p>
@@ -19,7 +24,7 @@
   {% else %}
   <p> bye </p>
   {% endif %}
-
+  
 <h1>FOOTER </h1>
 {% include "footer.html" %}
 
@@ -34,20 +39,20 @@
     <th>Lastname</th>
   </tr>
   {% for x in mymembers %}
-    <tr>
-      <td>{{ x.id }}</td>
+  <tr>
+    <td>{{ x.id }}</td>
         <td>{{ x.firstname }}</td>
-      <td>{{ x.lastname }}</td>
+        <td>{{ x.lastname }}</td>
     </tr>
-  {% endfor %}
-</table>
-
-<h1>VALUES ONLY *getting the key only</h1>
-{% for x in values_list  %}
-  <td>{{ x }}</td>
-{% endfor %}
+    {% endfor %}
+  </table>
   
-
+  <h1>VALUES ONLY *getting the key only</h1>
+  {% for x in values_list  %}
+  <td>{{ x }}</td>
+  {% endfor %}
+  
+  
 <h1>FILTERED *passing the arguments</h1>
 <p>Loop through the items:</p>
 <table border='1'>
@@ -96,7 +101,7 @@
       <td>{{ x.firstname }}</td>
       <td>{{ x.lastname }}</td>
     </tr>
-  {% endfor %}
+    {% endfor %}
 </table>
   
 
@@ -121,9 +126,9 @@
     <td colspan="3">Nothing to show</td>
   </tr>
   {% endif %}
-    
-</table>
   
+</table>
+
 
 
 <h1>ORDER BY *passing the arguments</h1>
@@ -150,3 +155,6 @@
 </table>
 
 {% endblock%}
+
+</body>
+</html>

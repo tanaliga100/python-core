@@ -1,24 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>{% block title %}{% endblock %}</title>
- <style>
-  body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  nav {
-    color: white;
-    background-color: black;
-    padding: 1rem;
-  }
- </style>     
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
 </head>
 <body>
-  <nav><a href="/"> Django Core </a> </nav>
+    <nav class="nav"><a href="/"> Django Core </a> </nav>
+    
+<div class="topnav">
+  <a href="/">HOME</a> |
+  <a href="/members">MEMBERS</a>
+</div>
 {% block content %}
 {% endblock %}
 </body>
