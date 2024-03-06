@@ -2,35 +2,151 @@
 
 {% block title%} Testing {% endblock%}
 {% block content %}
+<h1>For Loop </h1>
   {% for x  in fruits %}
-  <h1> {{x}} </h1>
+  <p> {{x}} </p>
   {% endfor%}
   <p>In views.py you can see what the fruits variable looks like.</p>
-  {% with name="dan100"%}
-<h1>Hello {{ name }}, how are you?</h1>
+
+<h1>Variables </h1>
+{% with name="dan100"%}
+<p>Hello {{ name }}, how are you?</p>
 {% endwith %}
 
-{% for l in lists  %}
-  <li>  {{l.firstname}}</li>
-{% endfor %}
-
-
+<h1>IF ELSE </h1>
 {% if greeting == 1 %}
-<h1> hello</h1>
+<p> hello</p>
   {% else %}
-  <h1> bye </h1>
+  <p> bye </p>
   {% endif %}
 
+<h1>FOOTER </h1>
 {% include "footer.html" %}
 
-
-
+<h1>INCLUDES *passing variables like props</h1>
 {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
 
+<h1>LOOPING THROUGH THE TABLE</h1>
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
 
-
-
-
-
+<h1>VALUES ONLY *getting the key only</h1>
+{% for x in values_list  %}
+  <td>{{ x }}</td>
+{% endfor %}
   
+
+<h1>FILTERED *passing the arguments</h1>
+<p>Loop through the items:</p>
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in filtered %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<h1>FILTERED *passing the arguments | multiple</h1>
+<p>Loop through the items:</p>
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in filtered_mul %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<h1>FILTERED *passing the arguments | Q expressions</h1>
+<p>Loop through the items:</p>
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in filtered_q %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+  
+
+<h1>FILTERED KEYSTROKE *passing the arguments | Q expressions</h1>
+<p>Loop through the items:</p>
+<table border='1'>
+  {% if filtered_char %}
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in filtered_char %}
+  <tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.firstname }}</td>  
+    <td>{{ x.lastname }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+    <td colspan="3">Nothing to show</td>
+  </tr>
+  {% endif %}
+    
+</table>
+  
+
+
+<h1>ORDER BY *passing the arguments</h1>
+<p>Loop through the items:</p>
+<table border='1'>
+  {% if order_by %}
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in order_by %}
+  <tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.firstname }}</td>  
+    <td>{{ x.lastname }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+    <td colspan="3">Nothing to show</td>
+  </tr>
+  {% endif %}
+</table>
+
 {% endblock%}
