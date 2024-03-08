@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 body {
   margin:0;
-  font: 600 18px 'Source Sans Pro', sans-serif;
+  font: 600 18px 'Source Sans Pro', verdana;
   letter-spacing: 0.64px;
   color: #585d74;
 }
