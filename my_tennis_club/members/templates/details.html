@@ -5,9 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  <div class="mycard">
-    <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
+
+<div class="card px-0">
+  <div class="card-body">
+    <h1 class="h5">{{ mymember.firstname }} {{ mymember.lastname }}</h1>
     <p>Phone {{ mymember.phone }}</p>
     <p>Member since: {{ mymember.joined_date }}</p>
   </div>
+</div>
 {% endblock %}  
+

@@ -6,17 +6,28 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+ {% load bootstrap5 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript %}
+
+    {% comment %} <link rel="stylesheet" href="{% static 'mystyles.css' %}"> {% endcomment %}
 </head>
 <body>
-    <nav class="nav"><a href="/"> Django Core </a> </nav>
-    
-<div class="topnav">
-  <a href="/">HOME</a> |
-  <a href="/members">MEMBERS</a>
+<div class="container">
+    <h1>My Tennis Club</h1>
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/members">MEMBERS</a>
+    </li>
+  </ul>
+<main class="pb-4"> 
+  {% block content %}
+  {% endblock %}
+</main>
 </div>
-{% block content %}
-{% endblock %}
 </body>
 </html>
 

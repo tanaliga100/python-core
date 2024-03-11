@@ -1,18 +1,22 @@
+
 {% extends "master.html" %}
+
+{% load icons %}
+{% icon 'edit' %}
 
 {% block title %}
   My Tennis Club - List of all members
 {% endblock %}
 
-
 {% block content %}
-  <div class="mycard">
-    <h1>Members</h1>
-    <ul>
+  <table class="table table-borderless  table-sm">
+    <ul class="list-group">
       {% for x in mymembers %}
-        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</li>
+        <li class="list-group-item" onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}
+<i class="far fa-pencil"></i>
+        </li>
       {% endfor %}
     </ul>
-  </div>
+  </table>
 {% endblock %}
 
