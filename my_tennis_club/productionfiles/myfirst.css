@@ -9,5 +9,6 @@ body {
 .nav {
     color: white;
     background-color: black;
+    font-size: 2rem;
     padding: 1rem;
   }
